@@ -3,7 +3,7 @@ import Hero from "./components/Hero";
 import Stats from "./components/Stats";
 import About from "./components/About";
 import Services from "./components/Services";
-import HowItWorks from "./components/HowItWorks";
+import Included from "./components/Included";
 import Projects from "./components/Projects";
 import Faq from "./components/Faq";
 import LinksHub from "./components/LinksHub";
@@ -24,7 +24,7 @@ export default function App() {
           <Services />
         </Reveal>
         <Reveal>
-          <HowItWorks />
+          <Included />
         </Reveal>
         <Reveal>
           <Projects />

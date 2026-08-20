@@ -6,17 +6,19 @@ export interface Profile {
   name: string;
   role: string;
   tagline: string;
+  /** Frase de efeito curta, exibida em destaque logo abaixo da tagline. */
+  pitch: string;
   bio: string[];
   email: string;
   /** Número em formato E.164 sem "+", pronto pra montar link wa.me. */
   whatsapp: string;
   whatsappMessage: string;
   location: {
-    city: string;
-    state: string;
-    country: string;
+    region: string;
     remote: boolean;
   };
+  /** Link do repositório deste site, usado como prova de trabalho no About/Footer. */
+  repoUrl: string;
 }
 
 export interface Service {
@@ -24,7 +26,7 @@ export interface Service {
   description: string;
 }
 
-export interface ProcessStep {
+export interface IncludedItem {
   title: string;
   description: string;
 }
@@ -52,65 +54,75 @@ export interface LinkItem {
 
 export const profile: Profile = {
   name: "Jhow Corrêa",
-  role: "Desenvolvedor de sites para negócios locais",
+  role: "Desenvolvedor",
   tagline:
-    "Crio sites rápidos e sob medida pra pequenos negócios — de Ribeirão Preto (SP) pra qualquer lugar do Brasil, remoto. Você vê o site quase pronto antes de decidir: sem lorem ipsum, sem risco.",
+    "Crio sites, sistemas e automações sob medida pra negócios e profissionais da região 016, ou remoto pra qualquer lugar do Brasil. Você vê o resultado quase pronto antes de decidir, sem lorem ipsum e sem risco.",
+  pitch: "Eu não entrego sites. Entrego resultados.",
   bio: [
-    "Sou desenvolvedor e crio sites para pequenos negócios locais — marmitarias, barbearias e afins — do zero até o ar: estrutura, conteúdo, SEO básico, LGPD e hospedagem.",
-    "Trabalho com processo enxuto: prévia real antes de fechar orçamento, entrega rápida e comunicação direta comigo, sem intermediário e sem enrolação.",
+    "Sou desenvolvedor há mais de 4 anos e crio sites, sistemas e automações sob medida pra negócios e profissionais que precisam de presença online de verdade.",
+    "Fora do teclado, toco contrabaixo. No trabalho, gosto de processo enxuto: prévia real antes de fechar orçamento, entrega rápida e comunicação direta comigo, sem intermediário.",
   ],
   email: "jhonatasrcorrea@gmail.com",
   whatsapp: "5516988071129",
   whatsappMessage: "Olá! Vi seu site e quero saber mais sobre criar um site pro meu negócio.",
   location: {
-    city: "Ribeirão Preto",
-    state: "SP",
-    country: "BR",
+    region: "Região 016",
     remote: true,
   },
+  repoUrl: "https://github.com/CorreaJhow/jhow-portfolio",
 };
 
 export const services: Service[] = [
   {
-    title: "Site institucional",
+    title: "Site que gera resultado",
     description:
-      "Site completo pro seu negócio: home, sobre, serviços/cardápio e contato. Rápido, responsivo e pronto pra converter.",
+      "Página inicial, sobre, serviços ou cardápio e contato: tudo pensado pra transformar visita em cliente, não só pra existir.",
   },
   {
-    title: "Prévia antes de orçar",
+    title: "Você decide vendo, não arriscando",
     description:
-      "Você vê o site quase pronto antes de decidir. Sem risco, sem lorem ipsum — só depois de aprovar é que fechamos escopo e preço.",
+      "Antes de qualquer cobrança, você vê o site quase pronto. Sem lorem ipsum, sem letra miúda: só fecha quando gostar do que viu.",
   },
   {
-    title: "SEO, LGPD e segurança",
+    title: "Tudo incluso, nada escondido",
     description:
-      "Todo site sai com SEO básico, páginas legais em conformidade com a LGPD e proteção contra spam em formulários.",
+      "SEO básico, conformidade com a LGPD e proteção contra spam já vêm no pacote, sem custo extra depois.",
   },
 ];
 
-export const howItWorks: ProcessStep[] = [
+export const included: IncludedItem[] = [
   {
-    title: "Prévia real",
-    description: "Você vê o site quase pronto antes de decidir — sem lorem ipsum, sem compromisso.",
+    title: "Prévia gratuita antes de decidir",
+    description: "Você só assume compromisso depois de ver o site quase pronto, sem pagar nada antes.",
   },
   {
-    title: "Escopo e orçamento",
-    description: "Só depois de aprovar a prévia fechamos escopo e preço, sem letra miúda.",
+    title: "Orçamento sem letra miúda",
+    description: "Preço e prazo claros desde o início, sem surpresa na hora de fechar.",
   },
   {
-    title: "Build completo",
-    description: "SEO básico, LGPD e segurança entram no pacote — não são extras escondidos no orçamento.",
+    title: "Pensado pra aparecer no Google e na IA",
+    description:
+      "SEO básico e estrutura pensada pra ferramentas como ChatGPT e Perplexity recomendarem seu negócio.",
   },
   {
-    title: "No ar + suporte",
-    description: "Publico, confirmo que tudo funciona e fico disponível pra ajustes depois da entrega.",
+    title: "Dentro da LGPD",
+    description: "Política de privacidade e termos de uso adequados à lei, sem dor de cabeça jurídica.",
+  },
+  {
+    title: "Testado antes de ir ao ar",
+    description:
+      "Revisão em celular, tablet e desktop, headers de segurança e proteção contra spam configurados antes do lançamento.",
+  },
+  {
+    title: "Suporte depois da entrega",
+    description: "Fico disponível pra ajustes e te ensino o básico, sem te deixar dependente de mim pra tudo.",
   },
 ];
 
 export const stats: Stat[] = [
   { label: "Prévia real antes de orçar" },
   { label: "SEO, LGPD e segurança inclusos" },
-  { label: "Ribeirão Preto (SP) e remoto" },
+  { label: "Região 016 e remoto" },
   { label: "Resposta rápida por WhatsApp" },
 ];
 
@@ -125,9 +137,9 @@ export const projects: Project[] = [
   {
     title: "Felipe Fotos",
     description:
-      "Software simples feito de presente para um fotógrafo — fora do escopo de site institucional, só pra ajudar no dia a dia do trabalho dele.",
+      "Software de gerenciamento e envio de fotos, feito sob medida pra uma necessidade específica de impressão expressa.",
     link: "",
-    tags: ["Presente", "Software"],
+    tags: ["Software"],
   },
   {
     title: "Em breve",
@@ -141,7 +153,7 @@ export const faq: FaqItem[] = [
   {
     question: "Quanto custa um site?",
     answer:
-      "Depende do escopo, mas todo projeto começa com uma prévia real antes de qualquer cobrança — você só decide o valor depois de ver o site quase pronto.",
+      "Depende do escopo, mas todo projeto começa com uma prévia real antes de qualquer cobrança. Você só decide o valor depois de ver o site quase pronto.",
   },
   {
     question: "Quanto tempo leva pra ficar pronto?",
@@ -149,14 +161,14 @@ export const faq: FaqItem[] = [
       "Sites institucionais simples costumam sair em poucas semanas após você aprovar a prévia e enviar o conteúdo final (textos, fotos, horários).",
   },
   {
-    question: "Vocês atendem só Ribeirão Preto?",
+    question: "E se eu não gostar do resultado?",
     answer:
-      "Atendo presencialmente em Ribeirão Preto (SP) e remoto pra qualquer lugar do Brasil — todo o processo (prévia, ajustes, entrega) funciona bem à distância.",
+      "Como você só decide depois de ver a prévia pronta, não tem risco. Se não fizer sentido pra você, não rola cobrança nenhuma.",
   },
   {
     question: "O site sai pronto pra aparecer no Google?",
     answer:
-      "Sim — todo projeto sai com SEO básico, conformidade com a LGPD e proteção de segurança inclusos, sem custo extra escondido.",
+      "Sim. Todo projeto sai com SEO básico, conformidade com a LGPD e proteção de segurança inclusos, sem custo extra escondido.",
   },
 ];
 

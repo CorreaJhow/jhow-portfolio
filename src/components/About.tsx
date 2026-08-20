@@ -10,6 +10,17 @@ export default function About() {
             {paragraph}
           </p>
         ))}
+        <p className="text-sm text-zinc-500">
+          Esse site que você está vendo foi feito por mim.{" "}
+          <a
+            href={profile.repoUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="text-emerald-400 hover:text-emerald-300"
+          >
+            Código aberto no GitHub →
+          </a>
+        </p>
       </div>
     </section>
   );

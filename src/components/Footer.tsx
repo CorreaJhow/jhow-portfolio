@@ -30,10 +30,7 @@ export default function Footer() {
           <span>
             © {new Date().getFullYear()} {profile.name}
           </span>
-          <span>
-            {profile.location.city}/{profile.location.state} · atendimento remoto pra todo o
-            Brasil
-          </span>
+          <span>{profile.location.region} · atendimento remoto pra todo o Brasil</span>
         </div>
       </div>
     </footer>

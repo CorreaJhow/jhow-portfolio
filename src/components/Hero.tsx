@@ -26,6 +26,7 @@ export default function Hero() {
           <p className="mt-6 text-balance text-lg leading-relaxed text-zinc-400">
             {profile.tagline}
           </p>
+          <p className="mt-3 font-medium text-zinc-100">{profile.pitch}</p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href={whatsappHref}
