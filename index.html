@@ -3,30 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="canonical" href="https://jhow.dev/" />
+    <meta name="theme-color" content="#09090b" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jhow Corrêa — Desenvolvedor & criação de sites</title>
     <meta
       name="description"
-      content="Jhow Corrêa — desenvolvedor que cria sites rápidos e sob medida para pequenos negócios. Veja projetos e formas de contato."
+      content="Jhow Corrêa — desenvolvedor que cria sites rápidos e sob medida para pequenos negócios em Ribeirão Preto (SP) e remoto para todo o Brasil. Veja projetos e formas de contato."
     />
     <meta property="og:title" content="Jhow Corrêa — Desenvolvedor & criação de sites" />
     <meta
       property="og:description"
-      content="Sites rápidos e sob medida para pequenos negócios, do zero até o ar."
+      content="Sites rápidos e sob medida para pequenos negócios, do zero até o ar — Ribeirão Preto (SP) e remoto pra todo o Brasil."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jhow.dev/" />
+    <meta property="og:image" content="https://jhow.dev/og-image.jpg" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jhow Corrêa — Desenvolvedor & criação de sites" />
+    <meta
+      name="twitter:description"
+      content="Sites rápidos e sob medida para pequenos negócios, do zero até o ar — Ribeirão Preto (SP) e remoto pra todo o Brasil."
+    />
+    <meta name="twitter:image" content="https://jhow.dev/og-image.jpg" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Jhow Corrêa",
-        "jobTitle": "Desenvolvedor de sites",
-        "email": "mailto:jhonatasrcorrea@gmail.com",
-        "url": "https://jhow.dev",
-        "sameAs": [
-          "https://www.linkedin.com/in/jhonatas-r-correa/",
-          "https://www.instagram.com/jhow_correa/",
-          "https://www.facebook.com/jhonatas.correa/"
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://jhow.dev/#person",
+            "name": "Jhow Corrêa",
+            "jobTitle": "Desenvolvedor de sites",
+            "email": "mailto:jhonatasrcorrea@gmail.com",
+            "url": "https://jhow.dev",
+            "image": "https://jhow.dev/og-image.jpg",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Ribeirão Preto",
+              "addressRegion": "SP",
+              "addressCountry": "BR"
+            },
+            "sameAs": [
+              "https://github.com/CorreaJhow",
+              "https://www.linkedin.com/in/jhonatas-r-correa/",
+              "https://www.instagram.com/jhow_correa/",
+              "https://www.facebook.com/jhonatas.correa/"
+            ]
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://jhow.dev/#service",
+            "name": "Jhow Corrêa — Criação de sites",
+            "url": "https://jhow.dev",
+            "provider": { "@id": "https://jhow.dev/#person" },
+            "areaServed": [
+              { "@type": "City", "name": "Ribeirão Preto" },
+              { "@type": "Country", "name": "Brasil" }
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Ribeirão Preto",
+              "addressRegion": "SP",
+              "addressCountry": "BR"
+            },
+            "makesOffer": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Site institucional para pequenos negócios" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO básico e conformidade com a LGPD" } }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://jhow.dev/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Quanto custa um site?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Depende do escopo, mas todo projeto começa com uma prévia real antes de qualquer cobrança — você só decide o valor depois de ver o site quase pronto."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quanto tempo leva pra ficar pronto?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sites institucionais simples costumam sair em poucas semanas após você aprovar a prévia e enviar o conteúdo final (textos, fotos, horários)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Vocês atendem só Ribeirão Preto?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Atendo presencialmente em Ribeirão Preto (SP) e remoto pra qualquer lugar do Brasil — todo o processo funciona bem à distância."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "O site sai pronto pra aparecer no Google?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sim — todo projeto sai com SEO básico, conformidade com a LGPD e proteção de segurança inclusos, sem custo extra escondido."
+                }
+              }
+            ]
+          }
         ]
       }
     </script>

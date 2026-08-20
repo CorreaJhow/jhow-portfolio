@@ -1,15 +1,17 @@
 # Jhow Corrêa
 
-> Desenvolvedor que cria sites rápidos e sob medida para pequenos negócios locais, do zero até o ar.
+> Desenvolvedor que cria sites rápidos e sob medida para pequenos negócios locais, do zero até o ar. Atende presencialmente em Ribeirão Preto (SP) e remoto para todo o Brasil.
 
 ## Sobre
 Jhow Corrêa é desenvolvedor e presta serviço de criação de sites para pequenos negócios (marmitarias, barbearias e afins). O processo inclui uma prévia real do site antes de fechar orçamento, SEO básico, conformidade com a LGPD e hospedagem.
 
 ## Páginas principais
 - [Serviços](https://jhow.dev/#servicos): tipos de site oferecidos e como funciona o processo, da prévia ao ar.
+- [Como eu trabalho](https://jhow.dev/#como-funciona): as 4 etapas do processo, da prévia ao suporte pós-entrega.
 - [Projetos](https://jhow.dev/#projetos): sites já entregues para clientes.
-- [Links](https://jhow.dev/#links): redes sociais e contato (GitHub, LinkedIn, Instagram, Facebook, e-mail).
+- [Perguntas frequentes](https://jhow.dev/#faq): preço, prazo, área de atendimento e o que vem incluso em cada site.
+- [Links](https://jhow.dev/#links): redes sociais e contato (GitHub, LinkedIn, Instagram, Facebook, WhatsApp, e-mail).
 
 ## Informações-chave
-- Contato: jhonatasrcorrea@gmail.com
-- Área de atuação: desenvolvimento de sites institucionais para pequenos negócios (Brasil)
+- Contato: jhonatasrcorrea@gmail.com · WhatsApp (link em /#links)
+- Área de atuação: desenvolvimento de sites institucionais para pequenos negócios — presencial em Ribeirão Preto (SP), remoto para todo o Brasil
