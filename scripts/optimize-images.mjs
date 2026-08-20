@@ -35,6 +35,16 @@ async function run() {
     .png()
     .toFile(`${PUBLIC}/apple-touch-icon.png`);
 
+  // Favicon (aba do navegador) a partir do mesmo avatar, em duas resoluções.
+  await sharp(`${SRC}/perfil-8bit (1).png`)
+    .resize({ width: 32, height: 32 })
+    .png()
+    .toFile(`${PUBLIC}/favicon-32.png`);
+  await sharp(`${SRC}/perfil-8bit (1).png`)
+    .resize({ width: 16, height: 16 })
+    .png()
+    .toFile(`${PUBLIC}/favicon-16.png`);
+
   console.log("Imagens otimizadas geradas em src/assets/profile e public/.");
 }
 

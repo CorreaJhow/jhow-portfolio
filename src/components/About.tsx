@@ -1,4 +1,6 @@
-import { profile } from "../data/site";
+import { profile, links } from "../data/site";
+
+const linkedin = links.find((link) => link.label === "LinkedIn")?.url;
 
 export default function About() {
   return (
@@ -10,17 +12,19 @@ export default function About() {
             {paragraph}
           </p>
         ))}
-        <p className="text-sm text-zinc-500">
-          Esse site que você está vendo foi feito por mim.{" "}
-          <a
-            href={profile.repoUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="text-emerald-400 hover:text-emerald-300"
-          >
-            Código aberto no GitHub →
-          </a>
-        </p>
+        {linkedin && (
+          <p className="text-sm text-zinc-500">
+            Quer conhecer minha trajetória de perto?{" "}
+            <a
+              href={linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="text-emerald-400 hover:text-emerald-300"
+            >
+              Meu histórico no LinkedIn →
+            </a>
+          </p>
+        )}
       </div>
     </section>
   );

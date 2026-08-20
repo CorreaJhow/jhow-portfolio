@@ -17,8 +17,6 @@ export interface Profile {
     region: string;
     remote: boolean;
   };
-  /** Link do repositório deste site, usado como prova de trabalho no About/Footer. */
-  repoUrl: string;
 }
 
 export interface Service {
@@ -56,11 +54,11 @@ export const profile: Profile = {
   name: "Jhow Corrêa",
   role: "Desenvolvedor",
   tagline:
-    "Crio sites, sistemas e automações sob medida pra negócios e profissionais da região 016, ou remoto pra qualquer lugar do Brasil. Você vê o resultado quase pronto antes de decidir, sem lorem ipsum e sem risco.",
-  pitch: "Eu não entrego sites. Entrego resultados.",
+    "Sites, sistemas e automações sob medida, pensados pra gerar resultado de verdade. Atendo negócios e profissionais da região 016 e, remoto, o Brasil inteiro. Você só decide depois de ver o trabalho quase pronto: sem lorem ipsum, sem risco.",
+  pitch: "O site é só o meio. O resultado é o que importa.",
   bio: [
-    "Sou desenvolvedor há mais de 4 anos e crio sites, sistemas e automações sob medida pra negócios e profissionais que precisam de presença online de verdade.",
-    "Fora do teclado, toco contrabaixo. No trabalho, gosto de processo enxuto: prévia real antes de fechar orçamento, entrega rápida e comunicação direta comigo, sem intermediário.",
+    "Sou desenvolvedor há aproximadamente 4 anos. Já atuei em sistemas de bancos e em soluções usadas por empresas do setor de aviação, e hoje aplico essa mesma bagagem em sites, sistemas e automações sob medida pra negócios e profissionais que precisam de presença online de verdade.",
+    "Prefiro ser direto: gosto de processo enxuto, prévia real antes de fechar orçamento e comunicação sem intermediário. Fora do teclado, toco contrabaixo.",
   ],
   email: "jhonatasrcorrea@gmail.com",
   whatsapp: "5516988071129",
@@ -69,7 +67,6 @@ export const profile: Profile = {
     region: "Região 016",
     remote: true,
   },
-  repoUrl: "https://github.com/CorreaJhow/jhow-portfolio",
 };
 
 export const services: Service[] = [
@@ -124,6 +121,10 @@ export const stats: Stat[] = [
   { label: "SEO, LGPD e segurança inclusos" },
   { label: "Região 016 e remoto" },
   { label: "Resposta rápida por WhatsApp" },
+  { label: "Direto comigo, sem intermediário" },
+  { label: "Código aberto, sem caixa-preta" },
+  { label: "Site rápido e responsivo" },
+  { label: "Mais de 4 anos de experiência" },
 ];
 
 // TODO: assim que os próximos projetos forem ao ar, troque o card "Em breve".
