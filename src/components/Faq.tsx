@@ -9,7 +9,7 @@ export default function Faq() {
         {faq.map((item) => (
           <details
             key={item.question}
-            className="group rounded-lg border border-zinc-900 bg-zinc-900/40 p-5 open:border-zinc-800"
+            className="group rounded-lg border border-zinc-900 bg-zinc-900/40 p-5 transition hover:border-zinc-800 open:border-zinc-800"
           >
             <summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-medium text-zinc-100 marker:content-none">
               {item.question}

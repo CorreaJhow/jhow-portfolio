@@ -38,11 +38,19 @@ export interface Project {
   description: string;
   link: string;
   tags: string[];
+  /** Logo do cliente (opcional). Quando ausente, o card usa só texto. */
+  logoUrl?: string;
 }
 
 export interface FaqItem {
   question: string;
   answer: string;
+}
+
+export interface CtaHighlight {
+  title: string;
+  description: string;
+  items: string[];
 }
 
 export interface LinkItem {
@@ -115,6 +123,18 @@ export const included: IncludedItem[] = [
     description: "Fico disponível pra ajustes e te ensino o básico, sem te deixar dependente de mim pra tudo.",
   },
 ];
+
+export const ctaHighlight: CtaHighlight = {
+  title: "Quer ver como fica o seu?",
+  description:
+    "Me manda uma mensagem contando sobre o seu negócio. Eu te devolvo uma prévia real, sem compromisso.",
+  items: [
+    "Prévia gratuita antes de decidir",
+    "SEO, LGPD e segurança inclusos",
+    "Região 016 e remoto",
+    "Suporte depois da entrega",
+  ],
+};
 
 export const stats: Stat[] = [
   { label: "Prévia real antes de orçar" },

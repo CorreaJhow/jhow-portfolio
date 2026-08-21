@@ -19,9 +19,12 @@ export default function About() {
               href={linkedin}
               target="_blank"
               rel="noreferrer"
-              className="text-emerald-400 hover:text-emerald-300"
+              className="group inline-flex items-center text-emerald-400 hover:text-emerald-300"
             >
-              Meu histórico no LinkedIn →
+              Meu histórico no LinkedIn
+              <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">
+                →
+              </span>
             </a>
           </p>
         )}

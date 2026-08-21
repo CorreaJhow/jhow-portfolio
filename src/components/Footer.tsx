@@ -19,7 +19,7 @@ export default function Footer() {
           href={whatsappHref}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2 rounded-md bg-emerald-400 px-4 py-2 text-sm font-medium text-zinc-950 transition hover:bg-emerald-300"
+          className="inline-flex items-center gap-2 rounded-md bg-emerald-400 px-4 py-2 text-sm font-medium text-zinc-950 transition hover:-translate-y-0.5 hover:bg-emerald-300 hover:shadow-lg hover:shadow-emerald-400/20 active:translate-y-0"
         >
           <MessageCircle size={16} />
           Falar no WhatsApp

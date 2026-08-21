@@ -4,6 +4,7 @@ import Stats from "./components/Stats";
 import About from "./components/About";
 import Services from "./components/Services";
 import Included from "./components/Included";
+import CtaHighlight from "./components/CtaHighlight";
 import Projects from "./components/Projects";
 import Faq from "./components/Faq";
 import LinksHub from "./components/LinksHub";
@@ -25,6 +26,9 @@ export default function App() {
         </Reveal>
         <Reveal>
           <Included />
+        </Reveal>
+        <Reveal>
+          <CtaHighlight />
         </Reveal>
         <Reveal>
           <Projects />

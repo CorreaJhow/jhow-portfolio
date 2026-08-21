@@ -35,7 +35,10 @@ export default function Nav() {
         <ul className="hidden gap-5 text-zinc-400 sm:flex">
           {items.map((item) => (
             <li key={item.href}>
-              <a href={item.href} className="transition hover:text-zinc-100">
+              <a
+                href={item.href}
+                className="relative text-zinc-400 transition hover:text-zinc-100 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-emerald-400 after:transition-all after:duration-300 hover:after:w-full"
+              >
                 {item.label}
               </a>
             </li>
@@ -58,7 +61,7 @@ export default function Nav() {
               <a
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="block py-2 transition hover:text-zinc-100"
+                className="block rounded-md px-2 py-2 transition hover:translate-x-1 hover:bg-zinc-900 hover:text-zinc-100"
               >
                 {item.label}
               </a>

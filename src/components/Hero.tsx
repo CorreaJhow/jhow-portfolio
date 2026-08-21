@@ -32,17 +32,17 @@ export default function Hero() {
               href={whatsappHref}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-md bg-emerald-400 px-4 py-2 text-sm font-medium text-zinc-950 transition hover:bg-emerald-300"
+              className="inline-flex items-center gap-2 rounded-md bg-emerald-400 px-4 py-2 text-sm font-medium text-zinc-950 transition hover:-translate-y-0.5 hover:bg-emerald-300 hover:shadow-lg hover:shadow-emerald-400/20 active:translate-y-0"
             >
               <MessageCircle size={16} />
               Falar no WhatsApp
             </a>
             <a
               href="#servicos"
-              className="inline-flex items-center gap-2 rounded-md border border-zinc-800 px-4 py-2 text-sm font-medium text-zinc-300 transition hover:border-zinc-700 hover:text-zinc-100"
+              className="group inline-flex items-center gap-2 rounded-md border border-zinc-800 px-4 py-2 text-sm font-medium text-zinc-300 transition hover:-translate-y-0.5 hover:border-zinc-700 hover:text-zinc-100 active:translate-y-0"
             >
               Ver serviços
-              <ArrowDown size={16} />
+              <ArrowDown size={16} className="transition-transform group-hover:translate-y-0.5" />
             </a>
           </div>
         </div>
