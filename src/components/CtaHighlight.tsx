@@ -1,10 +1,9 @@
 import { Check, MessageCircle } from "lucide-react";
-import { profile, ctaHighlight } from "../data/site";
+import { ctaHighlight } from "../data/site";
+import { getWhatsappHref } from "../lib/whatsapp";
 
 export default function CtaHighlight() {
-  const whatsappHref = `https://wa.me/${profile.whatsapp}?text=${encodeURIComponent(
-    profile.whatsappMessage,
-  )}`;
+  const whatsappHref = getWhatsappHref();
 
   return (
     <section className="mx-auto max-w-3xl px-6 py-8">

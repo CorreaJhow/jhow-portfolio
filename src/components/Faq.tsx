@@ -4,7 +4,7 @@ import { faq } from "../data/site";
 export default function Faq() {
   return (
     <section id="faq" className="mx-auto max-w-3xl px-6 py-16">
-      <h2 className="mb-6 font-mono text-sm text-zinc-500">05 · Perguntas frequentes</h2>
+      <h2 className="mb-6 font-mono text-sm text-zinc-400">05 · Perguntas frequentes</h2>
       <div className="space-y-3">
         {faq.map((item) => (
           <details
@@ -15,7 +15,7 @@ export default function Faq() {
               {item.question}
               <ChevronDown
                 size={16}
-                className="shrink-0 text-zinc-600 transition group-open:rotate-180"
+                className="shrink-0 text-zinc-500 transition group-open:rotate-180"
               />
             </summary>
             <p className="mt-3 text-sm leading-relaxed text-zinc-400">{item.answer}</p>

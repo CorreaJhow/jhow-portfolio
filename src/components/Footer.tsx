@@ -1,17 +1,16 @@
 import { MessageCircle } from "lucide-react";
 import { profile } from "../data/site";
+import { getWhatsappHref } from "../lib/whatsapp";
 
 export default function Footer() {
-  const whatsappHref = `https://wa.me/${profile.whatsapp}?text=${encodeURIComponent(
-    profile.whatsappMessage,
-  )}`;
+  const whatsappHref = getWhatsappHref();
 
   return (
     <footer className="border-t border-zinc-900">
       <div className="mx-auto flex max-w-3xl flex-col items-start gap-4 px-6 py-12 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="font-medium text-zinc-100">Bora tirar o site do papel?</p>
-          <p className="mt-1 text-sm text-zinc-500">
+          <p className="mt-1 text-sm text-zinc-400">
             Me chama no WhatsApp e conta como é o seu negócio.
           </p>
         </div>
@@ -26,7 +25,7 @@ export default function Footer() {
         </a>
       </div>
       <div className="border-t border-zinc-900 px-6 py-6">
-        <div className="mx-auto flex max-w-3xl flex-col gap-1 text-xs text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex max-w-3xl flex-col gap-1 text-xs text-zinc-400 sm:flex-row sm:items-center sm:justify-between">
           <span>
             © {new Date().getFullYear()} {profile.name}
           </span>

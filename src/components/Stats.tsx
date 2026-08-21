@@ -14,7 +14,7 @@ function StatItem({ label, hidden = false }: { label: string; hidden?: boolean }
 export default function Stats() {
   return (
     <div className="overflow-hidden border-y border-zinc-900 bg-zinc-900/20">
-      <ul className="marquee flex w-max items-center gap-8 whitespace-nowrap px-6 py-4 text-xs text-zinc-500 sm:text-sm">
+      <ul className="marquee flex w-max items-center gap-8 whitespace-nowrap px-6 py-4 text-xs text-zinc-400 sm:text-sm">
         {stats.map((stat) => (
           <StatItem key={stat.label} label={stat.label} />
         ))}

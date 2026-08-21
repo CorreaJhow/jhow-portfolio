@@ -10,9 +10,11 @@ const PUBLIC = "public";
 mkdirSync(OUT, { recursive: true });
 
 async function run() {
-  // Retrato principal (Hero/About) — WebP leve, mantém proporção 3:4.
+  // Retrato principal (Hero) — exibido a no máximo 192px (sm:w-48); 400px
+  // cobre retina 2x sem desperdiçar banda (Lighthouse reclamava de 85% de
+  // bytes desperdiçados quando isso saía em 640px).
   await sharp(`${SRC}/foto-perfil.png`)
-    .resize({ width: 640 })
+    .resize({ width: 400 })
     .webp({ quality: 82 })
     .toFile(`${OUT}/portrait.webp`);
 

@@ -1,11 +1,10 @@
 import { ArrowDown, MessageCircle } from "lucide-react";
 import { profile } from "../data/site";
+import { getWhatsappHref } from "../lib/whatsapp";
 import portrait from "../assets/profile/portrait.webp";
 
 export default function Hero() {
-  const whatsappHref = `https://wa.me/${profile.whatsapp}?text=${encodeURIComponent(
-    profile.whatsappMessage,
-  )}`;
+  const whatsappHref = getWhatsappHref();
 
   return (
     <section id="top" className="mx-auto max-w-3xl px-6 pb-16 pt-24 sm:pt-32">
@@ -49,8 +48,8 @@ export default function Hero() {
         <img
           src={portrait}
           alt={profile.name}
-          width={640}
-          height={851}
+          width={400}
+          height={502}
           className="w-36 shrink-0 rounded-xl border border-zinc-800 object-cover sm:w-48"
         />
       </div>

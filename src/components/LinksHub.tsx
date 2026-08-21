@@ -17,7 +17,7 @@ const ICONS: Record<string, IconComponent> = {
 export default function LinksHub() {
   return (
     <section id="links" className="mx-auto max-w-3xl px-6 py-16">
-      <h2 className="mb-6 font-mono text-sm text-zinc-500">06 · Links</h2>
+      <h2 className="mb-6 font-mono text-sm text-zinc-400">06 · Links</h2>
       <div className="grid gap-3 sm:grid-cols-2">
         {links.map((link) => {
           const isMail = link.url.startsWith("mailto:");
@@ -33,7 +33,7 @@ export default function LinksHub() {
               {link.label}
               <Icon
                 size={16}
-                className="text-zinc-600 transition-transform group-hover:translate-x-0.5"
+                className="text-zinc-500 transition-transform group-hover:translate-x-0.5"
               />
             </a>
           );

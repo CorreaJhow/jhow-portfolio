@@ -3,7 +3,7 @@ import { projects } from "../data/site";
 export default function Projects() {
   return (
     <section id="projetos" className="mx-auto max-w-3xl px-6 py-16">
-      <h2 className="mb-6 font-mono text-sm text-zinc-500">04 · Projetos</h2>
+      <h2 className="mb-6 font-mono text-sm text-zinc-400">04 · Projetos</h2>
       <div className="grid gap-4 sm:grid-cols-2">
         {projects.map((project) => (
           <div
@@ -25,14 +25,14 @@ export default function Projects() {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full border border-zinc-800 px-2 py-0.5 text-xs text-zinc-500"
+                    className="rounded-full border border-zinc-800 px-2 py-0.5 text-xs text-zinc-400"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
             </div>
-            <p className="mt-2 text-sm text-zinc-500">{project.description}</p>
+            <p className="mt-2 text-sm text-zinc-400">{project.description}</p>
             {project.link && (
               <a
                 href={project.link}

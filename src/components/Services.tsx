@@ -3,7 +3,7 @@ import { services, profile } from "../data/site";
 export default function Services() {
   return (
     <section id="servicos" className="mx-auto max-w-3xl px-6 py-16">
-      <h2 className="mb-6 font-mono text-sm text-zinc-500">02 · Serviços</h2>
+      <h2 className="mb-6 font-mono text-sm text-zinc-400">02 · Serviços</h2>
       <div className="grid gap-4 sm:grid-cols-3">
         {services.map((service) => (
           <div

@@ -4,7 +4,7 @@ import { included } from "../data/site";
 export default function Included() {
   return (
     <section id="incluso" className="mx-auto max-w-3xl px-6 py-16">
-      <h2 className="mb-6 font-mono text-sm text-zinc-500">03 · O que já vem incluso</h2>
+      <h2 className="mb-6 font-mono text-sm text-zinc-400">03 · O que já vem incluso</h2>
       <ul className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
         {included.map((item) => (
           <li key={item.title} className="flex gap-3">
