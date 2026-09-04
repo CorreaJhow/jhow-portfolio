@@ -63,14 +63,14 @@ export const profile: Profile = {
   role: "Desenvolvedor",
   tagline:
     "Sites, sistemas e automações sob medida, pensados pra gerar resultado de verdade. Atendo negócios e profissionais da região 016 e, remoto, o Brasil inteiro. Você só decide depois de ver o trabalho quase pronto: sem lorem ipsum, sem risco.",
-  pitch: "O site é só o meio. O resultado é o que importa.",
+  pitch: "A ferramenta é só o meio. O resultado é o que importa.",
   bio: [
     "Sou desenvolvedor há aproximadamente 4 anos. Já atuei em sistemas de bancos e em soluções usadas por empresas do setor de aviação, e hoje aplico essa mesma bagagem em sites, sistemas e automações sob medida pra negócios e profissionais que precisam de presença online de verdade.",
     "Prefiro ser direto: gosto de processo enxuto, prévia real antes de fechar orçamento e comunicação sem intermediário. Fora do teclado, toco contrabaixo.",
   ],
   email: "jhonatasrcorrea@gmail.com",
   whatsapp: "5516988071129",
-  whatsappMessage: "Olá! Vi seu site e quero saber mais sobre criar um site pro meu negócio.",
+  whatsappMessage: "Olá! Vi seu site e quero saber mais sobre criar um site ou sistema pro meu negócio.",
   location: {
     region: "Região 016",
     remote: true,
@@ -92,6 +92,11 @@ export const services: Service[] = [
     title: "Tudo incluso, nada escondido",
     description:
       "SEO básico, conformidade com a LGPD e proteção contra spam já vêm no pacote, sem custo extra depois.",
+  },
+  {
+    title: "Sistemas e automações sob medida",
+    description:
+      "Gestão, envio de arquivos, integrações: quando o negócio precisa de mais que um site, construo o sistema do jeito que seu processo pede.",
   },
 ];
 
@@ -143,7 +148,7 @@ export const stats: Stat[] = [
   { label: "Resposta rápida por WhatsApp" },
   { label: "Direto comigo, sem intermediário" },
   { label: "Código aberto, sem caixa-preta" },
-  { label: "Site rápido e responsivo" },
+  { label: "Sites e sistemas rápidos" },
   { label: "Mais de 4 anos de experiência" },
 ];
 
@@ -158,9 +163,16 @@ export const projects: Project[] = [
   {
     title: "Felipe Fotos",
     description:
-      "Software de gerenciamento e envio de fotos, feito sob medida pra uma necessidade específica de impressão expressa.",
-    link: "",
-    tags: ["Software"],
+      "Sistema de gerenciamento e envio de fotos, feito sob medida pra uma necessidade específica de impressão expressa.",
+    link: "https://www.instagram.com/felipemartinsfoto/",
+    tags: ["Sistema", "Gestão de fotos"],
+  },
+  {
+    title: "Sorria Fotos Instantâneas",
+    description:
+      "Outro sistema de gerenciamento e impressão de fotos, com um fluxo próprio pensado pra uma necessidade específica diferente da do Felipe Fotos — mesma categoria, abordagem própria.",
+    link: "https://www.instagram.com/sorriafotosinstantaneas/",
+    tags: ["Sistema", "Gestão de fotos"],
   },
   {
     title: "Em breve",

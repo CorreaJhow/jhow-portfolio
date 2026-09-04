@@ -4,7 +4,7 @@ export default function Services() {
   return (
     <section id="servicos" className="mx-auto max-w-3xl px-6 py-16">
       <h2 className="mb-6 font-mono text-sm text-zinc-400">02 · Serviços</h2>
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2">
         {services.map((service) => (
           <div
             key={service.title}
@@ -18,7 +18,7 @@ export default function Services() {
         ))}
       </div>
       <a
-        href={`mailto:${profile.email}?subject=Quero%20um%20site`}
+        href={`mailto:${profile.email}?subject=Quero%20um%20site%20ou%20sistema`}
         className="group mt-6 inline-flex items-center text-sm text-emerald-400 transition hover:text-emerald-300"
       >
         Pedir orçamento

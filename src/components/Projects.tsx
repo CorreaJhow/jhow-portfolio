@@ -40,7 +40,7 @@ export default function Projects() {
                 rel="noreferrer"
                 className="group mt-2 inline-flex items-center text-sm text-emerald-400 hover:text-emerald-300"
               >
-                Ver site
+                {project.link.includes("instagram.com") ? "Ver Instagram" : "Ver site"}
                 <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">
                   →
                 </span>
