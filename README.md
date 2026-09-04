@@ -48,6 +48,17 @@ Gera a pasta `dist/` — são só arquivos estáticos (HTML/CSS/JS), prontos pra
 
 Toda vez que editar o conteúdo, repita: `npm run build` → subir o novo conteúdo de `dist/`.
 
+## Deploy na Netlify (alternativa)
+
+O repo já tem `netlify.toml` com o comando de build (`npm run build`) e a pasta de publicação (`dist`) configurados — não precisa mexer nada no painel da Netlify além de conectar o repositório.
+
+1. Na Netlify, **Add new site → Import an existing project** e conecte este repositório do GitHub.
+2. Confirme a **branch** que ela vai acompanhar (em Site settings → Build & deploy). Se apontar pra `main`, ela publica o que estiver lá — se o trabalho mais recente ainda estiver numa PR/branch separada, ou aponte a Netlify pra essa branch, ou faça o merge na `main` primeiro.
+3. Build command e publish directory já vêm do `netlify.toml` (`npm run build` / `dist`) — não precisa preencher manualmente.
+4. Headers de segurança e a página 404 (`404.html`) também já saem configurados via `netlify.toml`/`public/404.html`.
+
+Se a tela ficar em branco após o deploy, o motivo mais comum é a Netlify não ter rodado o build (serviu o `index.html` cru, que aponta pro `.tsx` fonte) — confirme em **Deploys** que o último build terminou com sucesso e que "Publish directory" está como `dist`.
+
 ## Subindo pro GitHub
 
 ```bash
