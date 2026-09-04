@@ -1,4 +1,4 @@
-# jhow.dev — site pessoal / portfólio
+# jhow.me — site pessoal / portfólio
 
 Site pessoal do Jhow: sobre, serviços de criação de site, como funciona o processo, projetos, FAQ e hub de links (LinkedIn, Instagram, Facebook, GitHub, WhatsApp, e-mail).
 
@@ -9,7 +9,7 @@ Stack: **Vite + React + TypeScript + Tailwind CSS v4** — site estático, sem b
 Todo o conteúdo do site fica em um único arquivo: **`src/data/site.ts`**. Não precisa mexer em componente nenhum, só editar esse arquivo. Pendências abertas:
 
 - [ ] Trocar o card "Em breve" em `projects` assim que os próximos clientes forem ao ar.
-- [ ] Domínio final: hoje tudo (`index.html`, `robots.txt`, `sitemap.xml`, `llms.txt`, JSON-LD) aponta pra `jhow.dev`. Se comprar `jhow.me` (ou outro), troque nesses 4 arquivos de uma vez.
+- [ ] **Domínio em transição**: o `jhow.me` já foi comprado mas o DNS ainda não aponta pra Netlify (hoje resolve pra página padrão do registrador). Por isso `index.html`, `robots.txt`, `sitemap.xml` e `llms.txt` estão apontando pra `https://jhow-me.netlify.app` (o endereço que funciona de verdade agora). Assim que o DNS do `jhow.me` estiver propagado e servindo o site, troque esses 4 arquivos pra `https://jhow.me` de uma vez (`grep -rl "jhow-me.netlify.app" index.html public/` acha todo mundo).
 - [ ] O FAQ existe em dois lugares que precisam ficar sincronizados: o conteúdo visível vem de `faq` em `site.ts`, mas o `FAQPage` JSON-LD (pro Google/IA) está hardcoded em `index.html` — se editar uma pergunta, edite as duas.
 - [ ] As fotos de perfil (`src/assets/profile/foto-perfil.png`) têm uma marca d'água pequena de app de retrato por IA; se conseguir uma versão sem marca, rode `node scripts/optimize-images.mjs` de novo depois de substituir o arquivo-fonte.
 

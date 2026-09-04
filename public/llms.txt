@@ -6,11 +6,11 @@
 Jhow Corrêa é desenvolvedor há mais de 4 anos. Cria sites institucionais e sistemas sob medida para negócios e profissionais (marmitarias, barbearias, fotógrafos e afins). O processo inclui uma prévia real do site antes de fechar orçamento, SEO básico, conformidade com a LGPD e hospedagem.
 
 ## Páginas principais
-- [Serviços](https://jhow.dev/#servicos): tipos de site oferecidos e como funciona o processo, da prévia ao ar.
-- [O que já vem incluso](https://jhow.dev/#incluso): tudo que entra em cada projeto, sem custo extra escondido.
-- [Projetos](https://jhow.dev/#projetos): sites e sistemas já entregues para clientes.
-- [Perguntas frequentes](https://jhow.dev/#faq): preço, prazo e o que vem incluso em cada projeto.
-- [Links](https://jhow.dev/#links): redes sociais e contato (GitHub, LinkedIn, Instagram, Facebook, WhatsApp, e-mail).
+- [Serviços](https://jhow-me.netlify.app/#servicos): tipos de site oferecidos e como funciona o processo, da prévia ao ar.
+- [O que já vem incluso](https://jhow-me.netlify.app/#incluso): tudo que entra em cada projeto, sem custo extra escondido.
+- [Projetos](https://jhow-me.netlify.app/#projetos): sites e sistemas já entregues para clientes.
+- [Perguntas frequentes](https://jhow-me.netlify.app/#faq): preço, prazo e o que vem incluso em cada projeto.
+- [Links](https://jhow-me.netlify.app/#links): redes sociais e contato (GitHub, LinkedIn, Instagram, Facebook, WhatsApp, e-mail).
 
 ## Informações-chave
 - Contato: jhonatasrcorrea@gmail.com · WhatsApp (link em /#links)
