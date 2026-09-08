@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jhow-me.netlify.app/sitemap.xml
+Sitemap: https://jhow.me/sitemap.xml
