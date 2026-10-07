@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { GitHubIcon, LinkedInIcon, InstagramIcon, FacebookIcon } from "../components/icons/Brands";
 import { hubProfile, hubSections, type HubLink, type LinkIcon } from "../data/links";
+import { trackClick } from "../lib/analytics";
 import mark from "../assets/profile/mark.webp";
 
 type IconComponent = (props: { size?: number; className?: string }) => ReactNode;
@@ -79,12 +80,20 @@ function LinkCard({ link }: { link: HubLink }) {
       href={link.url}
       target={isMail ? undefined : "_blank"}
       rel="noreferrer"
+      onClick={() => trackClick(link.label)}
       className={`${base} ${tone}`}
     >
       {content}
     </a>
   );
 }
+
+const visibleSections = hubSections
+  .map((section) => ({
+    ...section,
+    links: section.links.filter((link) => link.status === "live" || link.teaser),
+  }))
+  .filter((section) => section.links.length > 0);
 
 export default function LinksPage() {
   return (
@@ -102,7 +111,7 @@ export default function LinksPage() {
       </header>
 
       <div className="mt-10 space-y-8">
-        {hubSections.map((section) => (
+        {visibleSections.map((section) => (
           <section key={section.title}>
             <h2 className="mb-3 font-mono text-xs uppercase tracking-wider text-zinc-500">
               {section.title}

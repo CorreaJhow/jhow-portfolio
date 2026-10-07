@@ -1,6 +1,7 @@
 // ============================================================
 // Conteúdo da página de links (links.jhow.me) — edite tudo aqui.
 // Pra publicar um item "Em breve": troque status por "live" e preencha a url.
+// Itens "soon" só aparecem se tiverem teaser: true (por enquanto, só as skills).
 // ============================================================
 
 import { getWhatsappHref } from "../lib/whatsapp";
@@ -27,6 +28,8 @@ export interface HubLink {
   status: "live" | "soon";
   /** Destaque visual (botão principal). */
   featured?: boolean;
+  /** Itens "soon" ficam ocultos na página, a não ser que sejam teaser. */
+  teaser?: boolean;
 }
 
 export interface HubSection {
@@ -74,6 +77,7 @@ export const hubSections: HubSection[] = [
         description: "Repositório aberto com skills pra a comunidade usar.",
         icon: "code",
         status: "soon",
+        teaser: true,
       },
       {
         label: "Prompts e materiais",
