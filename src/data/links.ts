@@ -90,10 +90,10 @@ export const hubSections: HubSection[] = [
     ],
   },
   {
-    title: "Cursos e materiais",
+    title: "Materiais",
     links: [
       {
-        label: "Meus cursos",
+        label: "Meus materiais",
         description: "Em produção. Entra aqui assim que sair.",
         icon: "course",
         status: "soon",
