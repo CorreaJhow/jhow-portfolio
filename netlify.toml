@@ -2,6 +2,18 @@
   command = "npm run build"
   publish = "dist"
 
+# links.jhow.me serve a página de links na raiz; /links funciona em qualquer domínio.
+[[redirects]]
+  from = "https://links.jhow.me/"
+  to = "/links.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/links"
+  to = "/links.html"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]
