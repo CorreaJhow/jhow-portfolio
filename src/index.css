@@ -13,9 +13,45 @@
 @import "@fontsource/jetbrains-mono/latin-ext-400.css";
 @import "@fontsource/jetbrains-mono/latin-ext-500.css";
 
+@import "@fontsource/anton/latin-400.css";
+@import "@fontsource/anton/latin-ext-400.css";
+
+/* Paleta da marca Jhowzera (mesma das capas e carrosséis: preto, branco e vermelho #E8202A,
+   Anton + Inter). Os neutros puxam pro café/espresso pra casar com a foto (camiseta marrom, madeira).
+   cafe-950 = fundo, cafe-50 = texto mais claro. vermelho-500 = cor da marca (fundo de botão, texto branco);
+   vermelho-400 = vermelho em texto sobre o fundo escuro (contraste AA). */
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-display: "Anton", Impact, "Arial Narrow", sans-serif;
+
+  --color-cafe-950: #0e0c0b;
+  --color-cafe-900: #1a1715;
+  --color-cafe-800: #2a2522;
+  --color-cafe-700: #3d3631;
+  --color-cafe-600: #5a514a;
+  --color-cafe-500: #8a7f76;
+  --color-cafe-400: #aba198;
+  --color-cafe-300: #cbc2b9;
+  --color-cafe-200: #dfd8d0;
+  --color-cafe-100: #ede8e2;
+  --color-cafe-50: #f8f5f1;
+
+  --color-vermelho-300: #ff8086;
+  --color-vermelho-400: #ff4d55;
+  --color-vermelho-500: #e8202a;
+  --color-vermelho-600: #c8141e;
+}
+
+/* Em @layer base pra classes como font-mono continuarem vencendo. */
+@layer base {
+  h1,
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-synthesis: none; /* Anton só tem um peso: sem negrito falso */
+    letter-spacing: 0.01em;
+  }
 }
 
 html {
@@ -23,7 +59,7 @@ html {
 }
 
 body {
-  @apply bg-zinc-950 text-zinc-100 antialiased;
+  @apply bg-cafe-950 text-cafe-100 antialiased;
   font-family: var(--font-sans);
 }
 
@@ -85,5 +121,22 @@ body {
   * {
     transition-property: color, background-color, border-color, opacity !important;
     transform: none !important;
+  }
+}
+
+/* Anel de texto em volta da foto do Hero. */
+@keyframes gira {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.gira {
+  animation: gira 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gira {
+    animation: none;
   }
 }

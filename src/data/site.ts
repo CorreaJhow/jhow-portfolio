@@ -5,6 +5,10 @@
 export interface Profile {
   name: string;
   role: string;
+  /** Título grande do Hero, falando com o dono do negócio. A palavra entre * * sai em vermelho. */
+  headline: string;
+  /** Frases do anel que gira em volta da foto. */
+  ring: string[];
   tagline: string;
   /** Frase de efeito curta, exibida em destaque logo abaixo da tagline. */
   pitch: string;
@@ -61,6 +65,8 @@ export interface LinkItem {
 export const profile: Profile = {
   name: "Jhow Corrêa",
   role: "Desenvolvedor",
+  headline: "Sites que trazem *cliente* pro seu negócio.",
+  ring: ["sites", "sistemas", "automações", "café"],
   tagline:
     "Sites, sistemas e automações sob medida, pensados pra gerar resultado de verdade. Atendo negócios e profissionais da região 016 e, remoto, o Brasil inteiro. Você só decide depois de ver o trabalho quase pronto: sem lorem ipsum, sem risco.",
   pitch: "A ferramenta é só o meio. O resultado é o que importa.",
@@ -213,3 +219,39 @@ export const links: LinkItem[] = [
   { label: "WhatsApp", url: "https://wa.me/5516988071129" },
   { label: "E-mail", url: "mailto:jhonatasrcorrea@gmail.com" },
 ];
+
+// ============================================================
+// Black Friday 2026 — "veja primeiro, depois decida". Só bônus, sem preço publicado
+// (não mexe nas propostas em aberto). Some sozinho depois de `ate`.
+// ============================================================
+export const blackFriday = {
+  ate: "2026-11-30",
+  barra: "seu site de demonstração + orçamento grátis até 30/11",
+  titulo: "Seu site pronto pra ver. Antes de pagar qualquer coisa.",
+  subtitulo:
+    "Na Black Friday eu monto uma demonstração real do site do seu negócio e te mando o orçamento, de graça. Gostou, fechamos. Não gostou, não paga nada.",
+  beneficios: [
+    { titulo: "Demonstração grátis", texto: "Site de verdade, com a cara do seu negócio. Nada de modelo genérico ou lorem ipsum." },
+    { titulo: "Orçamento grátis e claro", texto: "Preço e prazo por escrito, sem letra miúda." },
+    { titulo: "Só paga se aprovar", texto: "Não gostou da demonstração? Tudo bem. Sem cobrança e sem chateação." },
+    { titulo: "Aparece no Google", texto: "Google Meu Negócio configurado de bônus e SEO local pra ser achado na sua cidade." },
+    { titulo: "Recomendado pela IA", texto: "Estrutura pensada pra ChatGPT e Gemini indicarem seu negócio." },
+    { titulo: "Botão de WhatsApp", texto: "Cliente clica e já cai na sua conversa, pronto pra pedir ou agendar." },
+    { titulo: "Perfeito no celular", texto: "Testado em celular, tablet e computador antes de ir ao ar." },
+    { titulo: "Tudo no seu nome", texto: "Domínio e contas são seus. Você não fica preso a mim." },
+    { titulo: "Dentro da LGPD", texto: "Política de privacidade e proteção contra spam inclusas." },
+    { titulo: "Sistemas pequenos", texto: "Agenda, cardápio, painel: 1º mês de suporte grátis de bônus." },
+  ],
+  passos: [
+    { titulo: "Você me chama", texto: "Nome do negócio e o que você vende. Só isso. Foto e texto não são obrigatórios." },
+    { titulo: "Eu monto a demonstração", texto: "Em poucos dias você recebe o link do site funcionando + o orçamento." },
+    { titulo: "Você decide", texto: "Gostou, a gente fecha e coloca no ar. Não gostou, fica por isso mesmo." },
+  ],
+  faq: [
+    { q: "É grátis mesmo?", a: "É. A demonstração e o orçamento não custam nada e não te obrigam a nada." },
+    { q: "E se eu não gostar?", a: "Você não paga. Se quiser, eu ajusto a ideia e mando outra versão." },
+    { q: "Atende fora de Araraquara?", a: "Sim. Atendo a região 016 e o Brasil inteiro, por WhatsApp e chamada." },
+  ],
+  rodape: "Demonstrações por ordem de chegada. Bônus valem pra quem fechar até 30/11.",
+  whatsappMessage: "Oi Jhow! Vi a Black Friday no seu site e quero a demonstração grátis do meu site. Meu negócio é: ",
+};

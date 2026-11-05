@@ -10,13 +10,16 @@ import Faq from "./components/Faq";
 import LinksHub from "./components/LinksHub";
 import Footer from "./components/Footer";
 import Reveal from "./components/Reveal";
+import BlackFriday, { BlackFridayBar, BlackFridayOffer } from "./components/BlackFriday";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-zinc-950">
+    <div className="min-h-screen bg-cafe-950">
+      <BlackFridayBar />
       <Nav />
       <main>
         <Hero />
+        <BlackFridayOffer />
         <Stats />
         <Reveal>
           <About />
@@ -41,6 +44,7 @@ export default function App() {
         </Reveal>
       </main>
       <Footer />
+      <BlackFriday />
     </div>
   );
 }

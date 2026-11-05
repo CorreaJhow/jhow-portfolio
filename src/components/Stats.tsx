@@ -4,7 +4,7 @@ function StatItem({ label, hidden = false }: { label: string; hidden?: boolean }
   return (
     <li aria-hidden={hidden || undefined} className="flex items-center gap-8">
       {label}
-      <span aria-hidden="true" className="text-zinc-700">
+      <span aria-hidden="true" className="text-cafe-700">
         ·
       </span>
     </li>
@@ -13,8 +13,8 @@ function StatItem({ label, hidden = false }: { label: string; hidden?: boolean }
 
 export default function Stats() {
   return (
-    <div className="overflow-hidden border-y border-zinc-900 bg-zinc-900/20">
-      <ul className="marquee flex w-max items-center gap-8 whitespace-nowrap px-6 py-4 text-xs text-zinc-400 sm:text-sm">
+    <div className="overflow-hidden border-y border-cafe-900 bg-cafe-900/20">
+      <ul className="marquee flex w-max items-center gap-8 whitespace-nowrap px-6 py-4 text-xs text-cafe-400 sm:text-sm">
         {stats.map((stat) => (
           <StatItem key={stat.label} label={stat.label} />
         ))}

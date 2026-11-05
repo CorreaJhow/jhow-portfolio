@@ -10,7 +10,7 @@ Todo o conteúdo do site fica em um único arquivo: **`src/data/site.ts`**. Não
 
 - [ ] Trocar o card "Em breve" em `projects` assim que os próximos clientes forem ao ar.
 - [ ] O FAQ existe em dois lugares que precisam ficar sincronizados: o conteúdo visível vem de `faq` em `site.ts`, mas o `FAQPage` JSON-LD (pro Google/IA) está hardcoded em `index.html` — se editar uma pergunta, edite as duas.
-- [ ] As fotos de perfil (`src/assets/profile/foto-perfil.png`) têm uma marca d'água pequena de app de retrato por IA; se conseguir uma versão sem marca, rode `node scripts/optimize-images.mjs` de novo depois de substituir o arquivo-fonte.
+- [x] Foto nova (`source/foto-cafe.png`, 05/11/2026): o script recorta em círculo e gera `portrait.webp`, `avatar.webp` e o `og-image.jpg` no fundo escuro da marca. Paleta = a das capas do Instagram (preto, branco, vermelho #E8202A, Anton + Inter) com neutros puxando pro café da foto.
 
 ## Imagens
 

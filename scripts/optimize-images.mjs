@@ -10,18 +10,21 @@ const PUBLIC = "public";
 mkdirSync(OUT, { recursive: true });
 
 async function run() {
-  // Retrato principal (Hero) — exibido a no máximo 192px (sm:w-48); 400px
-  // cobre retina 2x sem desperdiçar banda (Lighthouse reclamava de 85% de
-  // bytes desperdiçados quando isso saía em 640px).
-  await sharp(`${SRC}/foto-perfil.png`)
-    .resize({ width: 400 })
-    .webp({ quality: 82 })
-    .toFile(`${OUT}/portrait.webp`);
+  // Retrato principal (Hero): a foto-fonte já é um círculo sobre preto; a máscara
+  // corta um pouco pra dentro pra sumir com a vinheta e deixa o fundo transparente.
+  // 560px cobre o círculo de até 280px em retina 2x.
+  const circulo = (lado) =>
+    Buffer.from(`<svg width="${lado}" height="${lado}"><circle cx="${lado / 2}" cy="${lado / 2}" r="${lado * 0.47}"/></svg>`);
+  const redonda = (lado) =>
+    sharp(`${SRC}/foto-cafe.png`).resize({ width: lado }).composite([{ input: circulo(lado), blend: "dest-in" }]);
 
-  // og:image / twitter:card — 1200x630, cover centralizado no rosto.
-  await sharp(`${SRC}/foto-perfil.png`)
-    .resize({ width: 1200, height: 630, fit: "cover", position: "attention" })
-    .flatten({ background: "#09090b" })
+  await redonda(560).webp({ quality: 84 }).toFile(`${OUT}/portrait.webp`);
+  // Miniatura redonda (Nav e página de links).
+  await redonda(256).webp({ quality: 88 }).toFile(`${OUT}/avatar.webp`);
+
+  // og:image / twitter:card — 1200x630: foto redonda no centro, sobre o fundo escuro da paleta.
+  await sharp({ create: { width: 1200, height: 630, channels: 3, background: "#0e0c0b" } })
+    .composite([{ input: await redonda(520).png().toBuffer(), left: 340, top: 55 }])
     .jpeg({ quality: 85 })
     .toFile(`${PUBLIC}/og-image.jpg`);
 
