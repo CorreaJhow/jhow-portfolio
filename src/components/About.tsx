@@ -5,7 +5,7 @@ const linkedin = links.find((link) => link.label === "LinkedIn")?.url;
 export default function About() {
   return (
     <section id="sobre" className="mx-auto max-w-3xl px-6 py-16">
-      <h2 className="mb-6 font-mono text-sm text-cafe-400">01 · Sobre</h2>
+      <h2 className="mb-6 font-mono text-sm text-cafe-400">Sobre</h2>
       <div className="space-y-4 text-cafe-300">
         {profile.bio.map((paragraph, i) => (
           <p key={i} className="leading-relaxed">

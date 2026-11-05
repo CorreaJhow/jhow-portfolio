@@ -2,7 +2,9 @@ import Nav from "./components/Nav";
 import Hero from "./components/Hero";
 import Stats from "./components/Stats";
 import About from "./components/About";
-import Services from "./components/Services";
+import Produtos from "./components/Produtos";
+import Demos from "./components/Demos";
+import Numeros from "./components/Numeros";
 import Included from "./components/Included";
 import CtaHighlight from "./components/CtaHighlight";
 import Projects from "./components/Projects";
@@ -19,16 +21,22 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <BlackFridayOffer />
         <Stats />
         <Reveal>
-          <About />
+          <Demos />
         </Reveal>
         <Reveal>
-          <Services />
+          <Numeros />
         </Reveal>
+        <Reveal>
+          <Produtos />
+        </Reveal>
+        <BlackFridayOffer />
         <Reveal>
           <Included />
+        </Reveal>
+        <Reveal>
+          <About />
         </Reveal>
         <Reveal>
           <CtaHighlight />

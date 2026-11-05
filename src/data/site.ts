@@ -23,11 +23,6 @@ export interface Profile {
   };
 }
 
-export interface Service {
-  title: string;
-  description: string;
-}
-
 export interface IncludedItem {
   title: string;
   description: string;
@@ -68,7 +63,7 @@ export const profile: Profile = {
   headline: "Sites que trazem *cliente* pro seu negócio.",
   ring: ["sites", "sistemas", "automações", "café"],
   tagline:
-    "Sites, sistemas e automações sob medida, pensados pra gerar resultado de verdade. Atendo negócios e profissionais da região 016 e, remoto, o Brasil inteiro. Você só decide depois de ver o trabalho quase pronto: sem lorem ipsum, sem risco.",
+    "Site, agendamento online e Google Meu Negócio pra barbearia, restaurante, loja e clínica. Eu monto uma demonstração do seu site antes de você pagar qualquer coisa.",
   pitch: "A ferramenta é só o meio. O resultado é o que importa.",
   bio: [
     "Sou desenvolvedor há aproximadamente 4 anos. Já atuei em sistemas de bancos e em soluções usadas por empresas do setor de aviação, e hoje aplico essa mesma bagagem em sites, sistemas e automações sob medida pra negócios e profissionais que precisam de presença online de verdade.",
@@ -83,28 +78,82 @@ export const profile: Profile = {
   },
 };
 
-export const services: Service[] = [
+export interface Produto {
+  nome: string;
+  pra: string;
+  itens: string[];
+  /** Mensagem pré-preenchida do WhatsApp quando a pessoa clica em "Quero esse". */
+  mensagem: string;
+  destaque?: string;
+}
+
+// Produtos: sem preço nem % publicados. O desconto da Black Friday é passado no WhatsApp, só pra quem chamar.
+export const produtos: Produto[] = [
   {
-    title: "Site que gera resultado",
-    description:
-      "Página inicial, sobre, serviços ou cardápio e contato: tudo pensado pra transformar visita em cliente, não só pra existir.",
+    nome: "Site profissional",
+    pra: "Pra ser achado no Google e chamado no WhatsApp.",
+    itens: [
+      "Páginas do seu negócio: serviços ou cardápio, fotos, horário e endereço",
+      "Botão de WhatsApp em todas as páginas",
+      "Pronto pro Google e pras IAs (ChatGPT, Gemini)",
+      "Domínio e contas no seu nome",
+    ],
+    mensagem: "Oi Jhow! Vi a Black Friday e quero o Site profissional com desconto. Meu negócio é: ",
   },
   {
-    title: "Você decide vendo, não arriscando",
-    description:
-      "Antes de qualquer cobrança, você vê o site quase pronto. Sem lorem ipsum, sem letra miúda: só fecha quando gostar do que viu.",
+    nome: "Site + agendamento",
+    pra: "Pra barbearia, salão, clínica e estúdio.",
+    itens: [
+      "Tudo do Site profissional",
+      "Cliente escolhe o horário sozinho, 24h por dia",
+      "Cada marcação cai direto no seu Google Agenda",
+      "Menos tempo respondendo \"tem horário hoje?\"",
+    ],
+    mensagem: "Oi Jhow! Vi a Black Friday e quero o Site + agendamento com desconto. Meu negócio é: ",
+    destaque: "ideal pra quem trabalha com horário",
   },
   {
-    title: "Tudo incluso, nada escondido",
-    description:
-      "SEO básico, conformidade com a LGPD e proteção contra spam já vêm no pacote, sem custo extra depois.",
-  },
-  {
-    title: "Sistemas e automações sob medida",
-    description:
-      "Gestão, envio de arquivos, integrações: quando o negócio precisa de mais que um site, construo o sistema do jeito que seu processo pede.",
+    nome: "Google Meu Negócio",
+    pra: "Pra aparecer no Maps quando procuram perto.",
+    itens: [
+      "Perfil criado ou arrumado do jeito certo",
+      "Fotos, horário, telefone e link pro site",
+      "Categoria e descrição pra busca da sua cidade",
+      "De bônus pra quem fechar site até 30/11",
+    ],
+    mensagem: "Oi Jhow! Vi a Black Friday e quero arrumar meu Google Meu Negócio. Meu negócio é: ",
   },
 ];
+
+/** Números públicos com fonte. Nada inventado: se trocar, mantenha o link da fonte. */
+export const numeros = [
+  {
+    valor: 97,
+    sufixo: "%",
+    texto: "dos brasileiros que usam internet pesquisam online antes de comprar numa loja física.",
+    fonte: "CNDL/SPC Brasil, 2019",
+    url: "https://www.moneytimes.com.br/internautas-buscam-informacoes-online-antes-de-comprar-em-lojas-fisicas-diz-pesquisa/",
+  },
+  {
+    valor: 81,
+    sufixo: "%",
+    texto: "das pessoas usaram o Google pra avaliar um negócio local.",
+    fonte: "BrightLocal, pesquisa 2022 (dado de 2021)",
+    url: "https://www.brightlocal.com/research/local-consumer-review-survey-2022/",
+  },
+  {
+    valor: 2.7,
+    sufixo: "x",
+    texto: "mais chance de o cliente achar seu negócio confiável quando o perfil no Google está completo.",
+    fonte: "Google",
+    url: "https://support.google.com/business/answer/10515606",
+  },
+];
+
+/** Demonstrações no ar (prints da página inteira em assets/demos, rolam dentro do celular). */
+export const demos = [
+  { nome: "Marmitaria São Bento", tipo: "marmitaria · delivery", url: "https://marmitaria-sao-bento.vercel.app", img: "saobento" },
+] as const;
 
 export const included: IncludedItem[] = [
   {
@@ -221,13 +270,13 @@ export const links: LinkItem[] = [
 ];
 
 // ============================================================
-// Black Friday 2026 — "veja primeiro, depois decida". Só bônus, sem preço publicado
-// (não mexe nas propostas em aberto). Some sozinho depois de `ate`.
+// Black Friday 2026 — "veja primeiro, depois decida". Desconto sem valor publicado (o Jhow passa no WhatsApp)
+// (vale pra quem chamar até `ate`; propostas já enviadas seguem como estão). Some sozinho depois de `ate`.
 // ============================================================
 export const blackFriday = {
   ate: "2026-11-30",
-  barra: "seu site de demonstração + orçamento grátis até 30/11",
-  titulo: "Seu site pronto pra ver. Antes de pagar qualquer coisa.",
+  barra: "desconto especial + demonstração grátis pra quem me chamar até 30/11",
+  titulo: "seu site pronto pra ver antes de pagar.",
   subtitulo:
     "Na Black Friday eu monto uma demonstração real do site do seu negócio e te mando o orçamento, de graça. Gostou, fechamos. Não gostou, não paga nada.",
   beneficios: [
@@ -252,6 +301,6 @@ export const blackFriday = {
     { q: "E se eu não gostar?", a: "Você não paga. Se quiser, eu ajusto a ideia e mando outra versão." },
     { q: "Atende fora de Araraquara?", a: "Sim. Atendo a região 016 e o Brasil inteiro, por WhatsApp e chamada." },
   ],
-  rodape: "Demonstrações por ordem de chegada. Bônus valem pra quem fechar até 30/11.",
+  rodape: "Demonstrações por ordem de chegada. Desconto e bônus valem pra quem me chamar até 30/11 e fechar o projeto.",
   whatsappMessage: "Oi Jhow! Vi a Black Friday no seu site e quero a demonstração grátis do meu site. Meu negócio é: ",
 };

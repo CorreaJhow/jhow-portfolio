@@ -17,7 +17,7 @@ const ICONS: Record<string, IconComponent> = {
 export default function LinksHub() {
   return (
     <section id="links" className="mx-auto max-w-3xl px-6 py-16">
-      <h2 className="mb-6 font-mono text-sm text-cafe-400">06 · Links</h2>
+      <h2 className="mb-6 font-mono text-sm text-cafe-400">Links</h2>
       <div className="grid gap-3 sm:grid-cols-2">
         {links.map((link) => {
           const isMail = link.url.startsWith("mailto:");

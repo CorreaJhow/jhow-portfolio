@@ -3,21 +3,55 @@ import { CheckCircle2, MessageCircle, X } from "lucide-react";
 import { blackFriday } from "../data/site";
 import { getWhatsappHref } from "../lib/whatsapp";
 
+import { ativa, fim } from "../lib/blackFriday";
+
 const KEY = "bf2026-fechado";
-// Vale até o fim do dia `ate` no horário de quem visita.
-const ativa = () => new Date() <= new Date(`${blackFriday.ate}T23:59:59`);
 const href = () => getWhatsappHref(blackFriday.whatsappMessage);
 
 const tag = "inline-block rounded bg-vermelho-500 px-2 py-0.5 font-mono text-[11px] font-semibold tracking-wider text-white";
 const botao =
   "inline-flex items-center justify-center gap-2 rounded-md bg-vermelho-500 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-vermelho-600 hover:shadow-lg hover:shadow-vermelho-500/20 active:translate-y-0";
 
-function BotaoWhats({ onClick, className = "" }: { onClick?: () => void; className?: string }) {
+function BotaoWhats({
+  onClick,
+  className = "",
+  texto = "Quero minha demonstração grátis",
+}: {
+  onClick?: () => void;
+  className?: string;
+  texto?: string;
+}) {
   return (
     <a href={href()} target="_blank" rel="noreferrer" onClick={onClick} className={`${botao} ${className}`}>
       <MessageCircle size={16} />
-      Quero minha demonstração grátis
+      {texto}
     </a>
+  );
+}
+
+/** Contagem regressiva até o fim do dia `ate` (prazo real, não reinicia). */
+function Contagem() {
+  const [agora, setAgora] = useState(() => Date.now());
+  useEffect(() => {
+    const t = setInterval(() => setAgora(Date.now()), 1000);
+    return () => clearInterval(t);
+  }, []);
+  const s = Math.max(0, Math.floor((fim().getTime() - agora) / 1000));
+  const partes = [
+    [Math.floor(s / 86400), "dias"],
+    [Math.floor((s % 86400) / 3600), "horas"],
+    [Math.floor((s % 3600) / 60), "min"],
+    [s % 60, "seg"],
+  ] as const;
+  return (
+    <div className="mt-6 flex gap-2" role="timer" aria-label="Tempo até o fim da Black Friday">
+      {partes.map(([n, rotulo]) => (
+        <div key={rotulo} className="w-16 rounded-lg bg-cafe-950 py-2 text-center ring-1 ring-cafe-800">
+          <span className="block font-display text-3xl tabular-nums text-cafe-50">{String(n).padStart(2, "0")}</span>
+          <span className="font-mono text-[10px] uppercase text-cafe-500">{rotulo}</span>
+        </div>
+      ))}
+    </div>
   );
 }
 
@@ -41,11 +75,12 @@ export function BlackFridayOffer() {
     <section id="black-friday" className="mx-auto max-w-3xl scroll-mt-20 px-6 py-12">
       <div className="rounded-xl border border-vermelho-500/30 bg-gradient-to-b from-vermelho-500/[0.07] to-transparent px-6 py-10 sm:px-10">
         <p className={tag}>BLACK FRIDAY · ATÉ 30/11</p>
-        <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight text-cafe-50 sm:text-4xl">
-          {blackFriday.titulo}
+        <h2 className="mt-4 text-balance text-4xl uppercase text-cafe-50 sm:text-5xl">
+          <span className="text-vermelho-500">Desconto</span> + {blackFriday.titulo}
         </h2>
         <p className="mt-4 text-balance leading-relaxed text-cafe-400">{blackFriday.subtitulo}</p>
-        <BotaoWhats className="mt-6 w-full sm:w-auto" />
+        <Contagem />
+        <BotaoWhats className="mt-6 w-full sm:w-auto" texto="Garantir meu desconto" />
 
         <ul className="mt-10 grid gap-x-8 gap-y-5 sm:grid-cols-2">
           {blackFriday.beneficios.map((b) => (
@@ -135,11 +170,11 @@ export default function BlackFriday() {
         <X size={18} />
       </button>
       <p className={tag}>BLACK FRIDAY · ATÉ 30/11</p>
-      <h2 id="bf-titulo" className="mt-2 text-xl font-semibold text-cafe-50">
-        Black Friday chegou: veja seu site antes de pagar.
+      <h2 id="bf-titulo" className="mt-2 text-2xl uppercase leading-tight text-cafe-50">
+        Black Friday: desconto e seu site pronto pra ver antes de pagar.
       </h2>
       <p className="mt-2 text-sm text-cafe-400">
-        Demonstração + orçamento grátis. Gostou, fechamos. Não gostou, não paga nada.
+        Demonstração + orçamento grátis. Gostou, fechamos com desconto. Não gostou, não paga nada.
       </p>
       <BotaoWhats onClick={fechar} className="mt-4 w-full" />
       <a href="#black-friday" onClick={fechar} className="mt-3 block text-center text-xs text-cafe-400 underline-offset-2 hover:text-cafe-100 hover:underline">

@@ -5,7 +5,8 @@ import mark from "../assets/profile/avatar.webp";
 
 const items = [
   { href: "#sobre", label: "Sobre" },
-  { href: "#servicos", label: "Serviços" },
+  { href: "#produtos", label: "Produtos" },
+  { href: "#demos", label: "Demos" },
   { href: "#projetos", label: "Projetos" },
   { href: "#faq", label: "FAQ" },
   { href: "#links", label: "Links" },

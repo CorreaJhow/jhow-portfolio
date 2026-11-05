@@ -124,6 +124,26 @@ body {
   }
 }
 
+/* Página da demo rolando dentro do celular (Demos): desce até o fim e volta. */
+@keyframes rola-demo {
+  0%, 8% { transform: translateY(0); }
+  92%, 100% { transform: translateY(calc(-100% + 460px)); }
+}
+
+.rola-demo {
+  animation: rola-demo 24s ease-in-out infinite alternate;
+}
+
+.rola-demo:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rola-demo {
+    animation: none;
+  }
+}
+
 /* Anel de texto em volta da foto do Hero. */
 @keyframes gira {
   to {

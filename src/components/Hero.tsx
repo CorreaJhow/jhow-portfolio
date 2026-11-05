@@ -1,5 +1,6 @@
 import { ArrowDown, MessageCircle } from "lucide-react";
-import { profile } from "../data/site";
+import { blackFriday, profile } from "../data/site";
+import { ativa } from "../lib/blackFriday";
 import { getWhatsappHref } from "../lib/whatsapp";
 import portrait from "../assets/profile/portrait.webp";
 
@@ -51,7 +52,8 @@ function Retrato() {
 }
 
 export default function Hero() {
-  const whatsappHref = getWhatsappHref();
+  const bf = ativa();
+  const whatsappHref = getWhatsappHref(bf ? blackFriday.whatsappMessage : undefined);
 
   return (
     <section id="top" className="mx-auto max-w-4xl px-6 pb-16 pt-14 sm:pt-24">
@@ -62,7 +64,16 @@ export default function Hero() {
           </p>
           <Headline text={profile.headline} />
           <p className="mt-6 text-balance text-lg leading-relaxed text-cafe-400">{profile.tagline}</p>
-          <p className="mt-4 text-lg font-medium text-cafe-100">{profile.pitch}</p>
+          {bf ? (
+            <a href="#black-friday" className="mt-5 inline-flex items-center gap-2 rounded-full bg-vermelho-500/10 px-3 py-1.5 text-sm text-cafe-100 ring-1 ring-vermelho-500/40 hover:bg-vermelho-500/20">
+              <span className="relative flex size-2 shrink-0"><span className="absolute inline-flex size-full animate-ping rounded-full bg-vermelho-400 opacity-75" /><span className="relative inline-flex size-2 rounded-full bg-vermelho-500" /></span>
+              <span>
+                Black Friday: <strong className="text-vermelho-400">desconto especial</strong> pra quem me chamar até 30/11
+              </span>
+            </a>
+          ) : (
+            <p className="mt-4 text-lg font-medium text-cafe-100">{profile.pitch}</p>
+          )}
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href={whatsappHref}
@@ -71,13 +82,13 @@ export default function Hero() {
               className="inline-flex items-center gap-2 rounded-full bg-vermelho-500 px-5 py-2.5 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-vermelho-600 hover:shadow-lg hover:shadow-vermelho-500/25 active:translate-y-0"
             >
               <MessageCircle size={16} />
-              Falar no WhatsApp
+              {bf ? "Quero minha demonstração grátis" : "Falar no WhatsApp"}
             </a>
             <a
-              href="#projetos"
+              href="#demos"
               className="group inline-flex items-center gap-2 rounded-full border border-cafe-700 px-5 py-2.5 text-sm font-medium text-cafe-200 transition hover:-translate-y-0.5 hover:border-cafe-500 hover:text-cafe-50 active:translate-y-0"
             >
-              Ver projetos
+              Ver sites que eu fiz
               <ArrowDown size={16} className="transition-transform group-hover:translate-y-0.5" />
             </a>
           </div>
